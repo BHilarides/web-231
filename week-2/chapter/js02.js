@@ -47,7 +47,7 @@ function getEstimate() {
   totalCost += photographers * distance * TRAVEL_COST;
 
   // add the cost of book if purchased
-  totalCost += boyBook ? BOOK_COST : 0;
+  totalCost += buyBook ? BOOK_COST : 0;
 
   // add the cost of photo rights if purchased
   totalCost += buyRights ? REPRO_COST : 0;
