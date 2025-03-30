@@ -39,19 +39,19 @@ function getEstimate() {
   let distance = document.getElementsById("photoDist").value;
   let buyBook = document.getElementById("makeBook").checked;
   let buyRights = document.getElementById("photoRights").checked;
+
+  // add the cost of photographers for the hours covered
+  totalCost += photographers * hours * EMP_Cost;
+
+  // add the cost of distance per photographer per mile
+  totalCost += photographers * distance * TRAVEL_COST;
+
+  // add the cost of book if purchased
+  totalCost += boyBook ? BOOK_COST : 0;
+
+  // add the cost of photo rights if purchased
+  totalCost += buyRights ? REPRO_COST : 0;
+
+  // Display the total cost estimate
+  document.getElementById("estimate").innerHTML = "$" + totalCost;
 }
-
-// add the cost of photographers for the hours covered
-totalCost += photographers * hours * EMP_Cost;
-
-// add the cost of distance per photographer per mile
-totalCost += photographers * distance * TRAVEL_COST;
-
-// add the cost of book if purchased
-totalCost += boyBook ? BOOK_COST : 0;
-
-// add the cost of photo rights if purchased
-totalCost += buyRights ? REPRO_COST : 0;
-
-// Display the total cost estimate
-document.getElementById("estimate").innerHTML = "$" + totalCost;
