@@ -29,6 +29,13 @@ function setupForm() {
   document.getElementById("photoDist").value = 0;
 
   getEstimate();
+
+  // add event handlers for each input control
+  document.getElementById("photoNum").onchange = getEstimate;
+  document.getElementById("photoHrs").onchange = getEstimate;
+  document.getElementById("photoDist").onchange = getEstimate;
+  document.getElementById("makeBook").onchange = getEstimate;
+  document.getElementById("photoRights").onchange = getEstimate;
 }
 
 // estimate the total cost of the service
@@ -36,7 +43,7 @@ function getEstimate() {
   let totalCost = 0;
   let photographers = document.getElementById("photoNum").value;
   let hours = document.getElementById("photoHrs").value;
-  let distance = document.getElementsById("photoDist").value;
+  let distance = document.getElementById("photoDist").value;
   let buyBook = document.getElementById("makeBook").checked;
   let buyRights = document.getElementById("photoRights").checked;
 
