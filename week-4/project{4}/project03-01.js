@@ -27,7 +27,7 @@ function calcTotal() {
       orderTotal += Number(menuItems[i].value);
     }
   }
-  document.getElementById("total").innerHTML = formatCurrency(menuTotal);
+  document.getElementById("billTotal").innerHTML = formatCurrency(orderTotal);
 }
 
  // Function to display a numeric value as a text string in the format $##.##
