@@ -13,7 +13,7 @@
 let menuItems = document.getElementsByClassName("menuItem");
 
 // Counter Variable, event listener
-for (let i = 0; i < menuItem.length; i++) {
+for (let i = 0; i < menuItems.length; i++) {
   menuItems[i].addEventListener("click", calcTotal);
 }
 
