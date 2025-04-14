@@ -10,17 +10,17 @@
 */
 
 // Declaring menuItems variables
-let menuItems = document.getElementsByClassName("menuItems");
+let menuItems = document.getElementsByClassName("menuItem");
 
 // Counter Variable, event listener
-for (let i = 0; i < menuItems.length; i++) {
+for (let i = 0; i < menuItem.length; i++) {
   menuItems[i].addEventListener("click", calcTotal);
 }
 
 //function for calculating total
 function calcTotal() {
   let orderTotal = 0;
-  let menuItems = document.getElementsByClassName("menuItems");
+  let menuItems = document.getElementsByClassName("menuItem");
 
   for (let i = 0; i < menuItems.length; i++) {
     if (menuItems[i].checked) {
