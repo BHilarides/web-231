@@ -39,9 +39,16 @@ function runTheRegister() {
 
    let changeValue = cashBox.value - billBox.value;  // calculate the change
 
-   changeBox.value = formatCurrency(changeValue); // format the change as currency
-
-   calcChange(changeValue); // Determine the units of currency needed for the change
+   // If the change is negative, display a warning
+   try {
+    if (changeValue < 0) {
+       throw "Cash amount doesn't cover the bill.";
+    }
+    changeBox.value = formatCurrency(changeValue); // format the change as currency
+    calcChange(changeValue); // Determine the units of currency needed for the change
+    } catch (error) {
+    document.getElementById("warning").innerHTML = error;
+    }
 }
 
 // Function to calculate the change by each unit of currency
