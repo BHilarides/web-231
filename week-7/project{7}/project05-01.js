@@ -19,9 +19,9 @@ const correctAnswers = ["10", "4", "-6", "5", "-7"];
 let timeID;
 
 // Add the onclick event handler to the startQuiz object
-document.getElementById("startQuiz").onclick = function() {
+document.getElementById("startquiz").onclick = function() {
   document.getElementById("overlay").className = "showquiz";
-  timeID = setInterval(countown, 1000);
+  timeID = setInterval(countdown, 1000);
 }
 
 // Elements in the quiz page
@@ -41,7 +41,7 @@ function countdown () {
   timeLeft--;
 
   // Update the quiz clock display
-  document.getElementById("quizClock").textContent = timeLeft;
+  quizClock.value = timeLeft;
 
   if (timeLeft === 0) {
     clearInterval(timeID);
@@ -52,12 +52,11 @@ function countdown () {
       let incorrectCount = correctAnswers.length - totalCorrect;
       alert("You have" + incorrectCount + "incorrect answers out of" + correctAnswers.length + "questions.");
       timeLeft = quizTime;
-      document.getElementById("quizClock").value = timeLeft;
-      document.getElementById("overlay").className = "hidequiz";
+      quizClock.value = timeLeft;
+      overlay.className = "hidequiz";
     }
   } else {
-    timeLeft--;
-    document.getElementById("quizClock").value = timeLeft;
+    quizClock.value = timeLeft;
   }
 }
 
