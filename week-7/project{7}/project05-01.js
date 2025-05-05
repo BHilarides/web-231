@@ -36,6 +36,31 @@ let overlay = document.getElementById("overlay");
 quizClock.value = quizTime;
 let timeLeft = quizTime;
 
+// Countdown function to update the quiz clock
+function countodwn () {
+  timeLeft--;
+
+  // Update the quiz clock display
+  document.getElementById("quizClock").textContent = timeLeft;
+
+  if (timeLeft === 0) {
+    clearInterval(timeID);
+    let totalCorrect = checkAnswers();
+    if (totalCorrect === correctAnswers.length) {
+      alert("Congratulations! You answered all questions correctly.");
+    } else {
+      let incorrectCount = correctAnswers.length - totalCorrect;
+      alert("You have" + incorrectCount + "incorrect answers out of" + correctAnswers.length + "questions.");
+      timeLeft = quizTime;
+      document.getElementById("quizClock").value = timeLeft;
+      document.getElementById("overlay").className = "hidequiz";
+    }
+  } else {
+    timeLeft--;
+    document.getElementById("quizClock").value = timeLeft;
+  }
+}
+
 // Declare the ID for timed commands
 // and the node list for questions
 
