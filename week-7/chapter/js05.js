@@ -27,12 +27,15 @@ function createLightbox() {
    let lbImages = document.createElement("div");
 
    // Design the lightbox title
-   lightBox.appendChild(lbtitle);
+   lightBox.appendChild(lbTitle);
    lbTitle.id = "lbTitle";
+   lbTitle.textContent = lightboxTitle;
 
    // Design the lightbox slide counter
    lightBox.appendChild(lbCounter);
    lbCounter.id = "lbCounter";
+   let currentImg = 1;
+   lbCounter.textContent = currentImg + " / " + imgCount;
 
    // Design the lightbox previous slide button
    lightBox.appendChild(lbPrev);
@@ -57,6 +60,7 @@ function createLightbox() {
     lbImages.appendChild(image);
    }
 }
+
 function setupGallery() {
    let imageCount = imgFiles.length;
    let galleryBox = document.getElementById("gallery");
