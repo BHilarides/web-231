@@ -18,9 +18,6 @@ const correctAnswers = ["10", "4", "-6", "5", "-7"];
 // Declare variable timeID
 let timeID;
 
-// Declare questionList variable
-let questionList = document.querySelectorAll("div#quiz input");
-
 // Add the onclick event handler to the startQuiz object
 document.getElementById("startQuiz").onclick = function() {
   document.getElementById("overlay").className = "showquiz";
@@ -36,8 +33,11 @@ let overlay = document.getElementById("overlay");
 quizClock.value = quizTime;
 let timeLeft = quizTime;
 
+// Declare questionList variable
+let questionList = document.querySelectorAll("div#quiz input");
+
 // Countdown function to update the quiz clock
-function countodwn () {
+function countdown () {
   timeLeft--;
 
   // Update the quiz clock display
