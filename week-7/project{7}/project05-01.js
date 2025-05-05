@@ -15,6 +15,18 @@
 const quizTime = 20;
 const correctAnswers = ["10", "4", "-6", "5", "-7"];
 
+// Declare variable timeID
+let timeID;
+
+// Declare questionList variable
+let questionList = document.querySelectorAll("div#quiz input");
+
+// Add the onclick event handler to the startQuiz object
+document.getElementById("startQuiz").onclick = function() {
+  document.getElementById("overlay").className = "showquiz";
+  timeID = setInterval(countown, 1000);
+}
+
 // Elements in the quiz page
 let startQuiz = document.getElementById("startquiz");
 let quizClock = document.getElementById("quizclock");
