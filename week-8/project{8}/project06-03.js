@@ -26,3 +26,8 @@ function copyShippingToBilling() {
     document.getElementById("stateBill").selectedIndex = document.getElementById("stateShip").selectedIndex;
   }
 }
+
+let formElements = document.querySelectorAll("input[type='text']");
+let fieldCount = formElements.length;
+let errorBox = document.getElementById("errorBox");
+
