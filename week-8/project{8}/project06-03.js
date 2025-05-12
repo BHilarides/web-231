@@ -9,3 +9,7 @@
 
       Filename: project06-03.js
 */
+
+let useShip = document.getElementById("useShip");
+
+document.getElementById("useShip").addEventListener("click", copyShippingToBilling)
