@@ -35,6 +35,7 @@ for (let i = 0; i < fieldCount; i++) {
   formElements[i].addEventListener("invalid", showValidationError);
 }
 
-function showValidationError() {
-
+function showValidationError(evt) {
+  evt.preventDefault();
+  errorBox.textContent = "Complete all highlighted Fields";
 }
