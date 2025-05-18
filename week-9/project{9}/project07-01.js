@@ -19,6 +19,20 @@ signupForm.addEventListener("submit", function(e) {
    let regex1 = /[A-Z]/;
    let regex2 = /\d/;
    let regex3 = /[!\$#%]/;
-
+   if (pwd.length < 8) {
+      feedback.innerHTML = "Password must be at least 8 characters long.";
+   }
+    else if (!regex1.test(pwd)) {
+        feedback.innerHTML = "Password must include an uppercase letter.";
+    }
+    else if (!regex2.test(pwd)) {
+        feedback.innerHTML = "Password must include a number.";
+    }
+    else if (!regex3.test(pwd)) {
+        feedback.innerHTML = "Password must include one of the following: !$#%.";
+    }
+    else {
+        feedback.submit();
+    }
 }
 );
